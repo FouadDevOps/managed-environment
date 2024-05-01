@@ -4,7 +4,8 @@ module "spoke_fouad_dev" {
 
 
 aks_cluster = {
-    service_mesh = "istio"
+    name = "myaks_cluster"
+
 }
 
 }
