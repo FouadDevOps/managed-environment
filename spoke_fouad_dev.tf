@@ -13,5 +13,3 @@ sp_client_id     = var.sp_client_id
 tenant_id        = var.tenant_id
 
 }
-
-
