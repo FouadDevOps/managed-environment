@@ -10,7 +10,10 @@ jobs:
   terraform_plan:
     name: 'Plan'
     runs-on: ubuntu-latest
-
+    env:
+      echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
+      echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
+      echo "ARM_CLIENT_ID=${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -19,12 +22,6 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: '1.5.7'
-
-      - name: Configure azure credentials
-        run: | 
-          echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-          echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
-          echo "ARM_CLIENT_ID=${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
 
       - name: Terraform Init
         run: terraform init
