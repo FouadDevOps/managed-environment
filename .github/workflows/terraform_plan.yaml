@@ -11,9 +11,9 @@ jobs:
     name: 'Plan'
     runs-on: ubuntu-latest
     env:
-      echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-      echo "ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
-      echo "ARM_CLIENT_ID=${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
