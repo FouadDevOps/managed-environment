@@ -1,6 +1,6 @@
 variable "client_id" {
   type = string
-  default = "276850cb-96f2-493a-898e-6e4f475fda04"
+  default = "e497a966-9f35-4af4-84f9-a543cf919483"
 }
 
 variable "client_secret" {
