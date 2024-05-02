@@ -9,3 +9,7 @@ variable "sp_client_secret" {
 variable "tenant_id" {
   type = string
 }
+
+# variable "subscription_id" {
+#   type = string
+# }
