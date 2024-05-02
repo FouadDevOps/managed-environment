@@ -10,11 +10,7 @@ jobs:
   terraform_plan:
     name: 'Plan'
     runs-on: ubuntu-latest
-    env:
-      TF_VAR_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-      TF_VAR_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
-      TF_VAR_tenant_id: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
-      # TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -24,11 +20,15 @@ jobs:
         with:
           terraform_version: '1.5.7'
 
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Configure azure credentials
+        run: |
+          terraform init
+          terraform plan
+        env:
+          TF_VAR_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
+          TF_VAR_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
+          TF_VAR_tenant_id: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
+          TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
 
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v2
