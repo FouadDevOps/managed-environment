@@ -1,8 +1,8 @@
-variable "sp_client_id" {
+variable "client_id" {
   type = string
 }
 
-variable "sp_client_secret" {
+variable "client_secret" {
     type = string
 }
 
@@ -10,6 +10,6 @@ variable "tenant_id" {
   type = string
 }
 
-# variable "subscription_id" {
-#   type = string
-# }
+variable "subscription_id" {
+  type = string
+}

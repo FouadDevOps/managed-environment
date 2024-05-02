@@ -8,9 +8,9 @@ aks_cluster = {
 
 }
 
-sp_client_secret = var.sp_client_secret
-sp_client_id     = var.sp_client_id
+client_secret = var.client_secret
+client_id     = var.client_id
 tenant_id        = var.tenant_id
-# subscription_id  = var.subscription_id
+subscription_id  = var.subscription_id
 
 }
