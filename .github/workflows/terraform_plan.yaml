@@ -25,10 +25,10 @@ jobs:
           terraform init
           terraform plan
         env:
-          TF_VAR_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-          TF_VAR_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
-          TF_VAR_tenant_id: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
-          TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
+          ARM_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
+          ARM_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
+          ARM_tenant_id: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
+          ARM_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
 
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v2
