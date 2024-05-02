@@ -10,7 +10,11 @@ jobs:
   terraform_plan:
     name: 'Plan'
     runs-on: ubuntu-latest
-
+    env:
+      ARM_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }} >> $GITHUB_ENV
+      ARM_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }} >> $GITHUB_ENV
+      ARM_tenant_id: ${{ secrets.AZURE_TENANT_ID }} >> $GITHUB_ENV
+      ARM_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} >> $GITHUB_ENV
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -20,15 +24,15 @@ jobs:
         with:
           terraform_version: '1.5.7'
 
-      - name: Configure azure credentials
-        run: |
-          terraform init
-          terraform plan
-        env:
-          ARM_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
-          ARM_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
-          ARM_tenant_id: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
-          ARM_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
+      # - name: Azure login
+      #   run: | 
+      #     az login --service-principal -u "" -p "CLIENT_SECRET" --tenant "TENANT_ID"
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
 
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v2
