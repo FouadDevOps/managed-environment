@@ -28,8 +28,12 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan -input=false
-
+        run: | 
+          terraform plan -input=false
+        env:
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v2
         with:
