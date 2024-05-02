@@ -10,8 +10,6 @@ jobs:
   terraform_plan:
     name: 'Plan'
     runs-on: ubuntu-latest
-    env:
-      TF_VAR_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }} >> $GITHUB_ENV
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -25,7 +23,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan -input=false
+        run: terraform plan -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
 
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v2
