@@ -11,10 +11,10 @@ jobs:
     name: 'Plan'
     runs-on: ubuntu-latest
     env:
-      ARM_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }} >> $GITHUB_ENV
-      ARM_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }} >> $GITHUB_ENV
-      ARM_tenant_id: ${{ secrets.AZURE_TENANT_ID }} >> $GITHUB_ENV
-      ARM_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} >> $GITHUB_ENV
+      TF_VAR_sp_client_id: ${{ secrets.AZURE_CLIENT_ID }}" >> $GITHUB_ENV
+      TF_VAR_sp_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}" >> $GITHUB_ENV
+      TF_VAR_tenant_id: ${{ secrets.AZURE_TENANT_ID }}" >> $GITHUB_ENV
+      TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -23,10 +23,6 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: '1.5.7'
-
-      - name: Azure login
-        run: | 
-          az login --service-principal -u "${{ secrets.AZURE_CLIENT_ID }}" -p "${{ secrets.AZURE_CLIENT_SECRET }} " --tenant "${{ secrets.AZURE_TENANT_ID }}"
 
       - name: Terraform Init
         run: terraform init
