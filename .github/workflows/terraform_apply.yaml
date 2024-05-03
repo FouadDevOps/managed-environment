@@ -17,10 +17,12 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: '1.5.7'
+          terraform_version: '1.8.2'
 
       - name: Terraform Init
         run: terraform init
+        working-directory: fouad
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
+        working-directory: fouad
