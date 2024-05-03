@@ -35,5 +35,5 @@ jobs:
         working-directory: fouad
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -var="client_secret=${{secrets.AZURE_CLIENT_SECRET}}
         working-directory: fouad
