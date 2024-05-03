@@ -25,6 +25,7 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
+        working-directory: fouad
 
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v2
