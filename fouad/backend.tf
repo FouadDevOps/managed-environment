@@ -1,4 +1,4 @@
-resource "azurerm_storage_account" "example" {
+resource "azurerm_storage_account" "sa" {
   name                     = "fouad-azure-storage"
   resource_group_name      = azurerm_resource_group.aks_rg.name
   location                 = azurerm_resource_group.aks_rg.location
@@ -10,6 +10,14 @@ resource "azurerm_storage_account" "example" {
   }
 }
 
+
+resource "azurerm_storage_container" "sc" {
+  name                  = "tfstate_container"
+  storage_account_name  = azurerm_storage_account.sa.name
+  container_access_type = "private"
+}
+
+
 terraform {
   backend "azurerm" {
     resource_group_name = "aks_resource_group"
@@ -18,3 +26,4 @@ terraform {
     key = "terraform.tfstate"
   }
 }
+
