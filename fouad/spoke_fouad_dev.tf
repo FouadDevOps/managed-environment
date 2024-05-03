@@ -1,5 +1,5 @@
 module "spoke_fouad_dev" {
-  source = "github.com/FouadDevOps/spoke_module?ref=main"
+  source = "github.com/FouadDevOps/fouad_spoke_module?ref=main"
 
 
 
