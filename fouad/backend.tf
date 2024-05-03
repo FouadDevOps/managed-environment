@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "sa" {
-  name                     = "fouad-azure-storage"
+  name                     = "fouadazurestorage"
   resource_group_name      = azurerm_resource_group.aks_rg.name
   location                 = azurerm_resource_group.aks_rg.location
   account_tier             = "Standard"
@@ -21,7 +21,7 @@ resource "azurerm_storage_container" "sc" {
 terraform {
   backend "azurerm" {
     resource_group_name = "aks_resource_group"
-    storage_account_name = "fouad-azure-storage"
+    storage_account_name = "fouadazurestorage"
     container_name = "tfstate"
     key = "terraform.tfstate"
   }
