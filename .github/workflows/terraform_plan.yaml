@@ -19,6 +19,10 @@ jobs:
         with:
           terraform_version: '1.8.2'
 
+
+      - name: navigate to folder
+        run: cd fouad
+
       - name: navigate to folder
         run: pwd
 
