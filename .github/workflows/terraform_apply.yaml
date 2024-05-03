@@ -21,6 +21,8 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: fouad
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
+        working-directory: fouad
