@@ -9,3 +9,12 @@ resource "azurerm_storage_account" "example" {
     environment = "staging"
   }
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name = "aks_resource_group"
+    storage_account_name = "fouad-azure-storage"
+    container_name = "tfstate"
+    key = "terraform.tfstate"
+  }
+}
