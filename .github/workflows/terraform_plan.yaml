@@ -19,13 +19,10 @@ jobs:
         with:
           terraform_version: '1.8.2'
 
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Login to Azure
-        uses: azure/login@v1
+      - uses: azure/login@v2
         with:
-          creds: ${{ secrets.AZURE_CLIENT_SECRET }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Terraform Init
         run: terraform init
