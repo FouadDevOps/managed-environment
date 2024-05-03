@@ -19,15 +19,9 @@ jobs:
         with:
           terraform_version: '1.8.2'
 
-
-      - name: navigate to folder
-        run: cd fouad
-
-      - name: navigate to folder
-        run: pwd
-
       - name: Terraform Init
         run: terraform init
+        working-directory: ./fouad
 
       - name: Terraform Plan
         run: terraform plan -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
