@@ -21,7 +21,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./fouad
+        working-directory: ./managed-environment/fouad
 
       - name: Terraform Plan
         run: terraform plan -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
