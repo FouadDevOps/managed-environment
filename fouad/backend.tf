@@ -1,7 +1,8 @@
+
 resource "azurerm_storage_account" "sa" {
   name                     = "fouadazurestorage"
-  resource_group_name      = azurerm_resource_group.aks_rg.name
-  location                 = azurerm_resource_group.aks_rg.location
+  resource_group_name      = "aks_resource_group"
+  location                 = "East US"
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
@@ -10,9 +11,8 @@ resource "azurerm_storage_account" "sa" {
   }
 }
 
-
 resource "azurerm_storage_container" "sc" {
-  name                  = "tfstate_container"
+  name                  = "tfstate-container"
   storage_account_name  = azurerm_storage_account.sa.name
   container_access_type = "private"
 }
