@@ -6,4 +6,6 @@ versions:
   nginx_chart: v0.2.0
   splunk_chart: v0.2.0
 values: |
-  clusterName: aks-corp-fouad-dev-usc
+  gateway:
+    service:
+      loadBalancerIp: 10.1.0.78
