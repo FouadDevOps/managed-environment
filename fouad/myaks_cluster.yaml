@@ -7,6 +7,3 @@ versions:
   splunk_chart: v0.2.0
 values: |
   clusterName: aks-corp-fouad-dev-usc
-  gateway:
-    service:
-      loadBalancerIp: 1.2.3.4
