@@ -11,5 +11,3 @@ module "spoke_fouad_dev" {
 
   client_secret = var.client_secret
 }
-
-
