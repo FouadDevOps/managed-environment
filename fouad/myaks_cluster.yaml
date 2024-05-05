@@ -10,3 +10,12 @@ values: |
   gateway:
     service:
       loadBalancerIp: 10.9.9.0
+  istio_enabled: true
+  certManager:
+    enabled: true
+  certManagerForISTIO:
+    enabled: true
+  istiod:
+    enabled: true
+  istioIngressGateway:
+    enabled: true
