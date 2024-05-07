@@ -4,7 +4,7 @@ module "spoke_fouad_dev" {
 
   aks_cluster = {
     name = "myaks_cluster"
-    loadBalancerIp = "10.0.0.0"
+    loadBalancerIp = ""
   }
 
   client_secret = var.client_secret
