@@ -7,16 +7,4 @@ versions:
   splunk_chart: v0.2.0
 values: |
   clusterName: aks-corp-fouad-dev-usc
-  gateway:
-    service:
-      loadBalancerIp: "10.224.0.5"
-  istio_enabled: true
-  certManager:
-    enabled: true
-  certManagerForISTIO:
-    enabled: true
-  istiod:
-    enabled: true
-  istioIngressGateway:
-    enabled: true
   loadBalancerIp: "10.224.0.5"
