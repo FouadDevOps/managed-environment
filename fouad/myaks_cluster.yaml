@@ -19,4 +19,4 @@ values: |
     enabled: true
   istioIngressGateway:
     enabled: true
-  loadBalancerIp: "10.224.0.5"
+  loadBalancerIp: "10.0.0.0"
