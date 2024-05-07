@@ -6,7 +6,7 @@ module "spoke_fouad_dev" {
     name = "myaks_cluster"
     auto_loadBalancerIp = false
     # service_mesh = "istio"
-    loadBalancerIp = "10.0.1.89"
+    loadBalancerIp = "10.0.1.66"
   }
 
   client_secret = var.client_secret
