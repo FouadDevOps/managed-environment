@@ -7,3 +7,15 @@ versions:
   splunk_chart: v0.2.0
 values: |
   loadBalancerIp: 10.0.1.66
+  istio_enabled: true
+  certManager:
+    enabled: true
+  certManagerForISTIO:
+    enabled: true
+  istiod:
+    enabled: true
+  istioIngressGateway:
+    enabled: true
+  gateway:
+    service:
+      loadBalancerIp: 10.0.1.66
