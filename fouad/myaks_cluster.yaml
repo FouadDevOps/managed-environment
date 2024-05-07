@@ -9,7 +9,7 @@ values: |
   clusterName: aks-corp-fouad-dev-usc
   gateway:
     service:
-      loadBalancerIp: 10.9.9.0
+      loadBalancerIp: "10.224.0.5"
   istio_enabled: true
   certManager:
     enabled: true
