@@ -6,4 +6,3 @@ versions:
   nginx_chart: v0.2.0
   splunk_chart: v0.2.0
 values: |
-  
