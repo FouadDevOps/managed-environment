@@ -15,3 +15,6 @@ values: |
     enabled: true
   istioIngressGateway:
     enabled: true
+  gateway:
+    service:
+      loadBalancerIp: "10.224.0.5"
