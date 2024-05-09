@@ -6,9 +6,6 @@ versions:
   nginx_chart: v0.2.0
   splunk_chart: v0.2.0
 values: |
-  gateway:
-    service:
-      loadBalancerIp: "10.224.0.5"
   istio_enabled: true
   certManager:
     enabled: true
