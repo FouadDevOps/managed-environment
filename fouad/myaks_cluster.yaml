@@ -6,4 +6,4 @@ versions:
   nginx_chart: v0.2.0
   splunk_chart: v0.2.0
 values: |
-  loadBalancerIp: 10.9.9.0
+  name: my-aks-cluster
