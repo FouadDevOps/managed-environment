@@ -5,6 +5,7 @@ module "spoke_fouad_dev" {
   aks_cluster = {
     name = "myaks_cluster"
     auto_loadBalancerIp = true
+    service_mesh = "istio"
     }
 
   client_secret = var.client_secret
