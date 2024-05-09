@@ -6,15 +6,4 @@ versions:
   nginx_chart: v0.2.0
   splunk_chart: v0.2.0
 values: |
-  istio_enabled: true
-  certManager:
-    enabled: true
-  certManagerForISTIO:
-    enabled: true
-  istiod:
-    enabled: true
-  istioIngressGateway:
-    enabled: true
-  gateway:
-    service:
-      loadBalancerIp: 10.9.8.0
+  {}
