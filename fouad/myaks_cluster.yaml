@@ -7,4 +7,3 @@ versions:
   splunk_chart: v0.2.0
 values: |
   name: my-aks-cluster
-  loadBalancerIp: "10.224.0.5"
