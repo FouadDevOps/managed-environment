@@ -4,6 +4,7 @@ module "spoke_fouad_dev" {
 
   aks_cluster = {
     name = "myaks_cluster"
+    auto_loadBalancerIp = true
     }
 
   client_secret = var.client_secret
