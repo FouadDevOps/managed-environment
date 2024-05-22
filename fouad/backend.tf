@@ -5,6 +5,7 @@ resource "azurerm_storage_account" "sa" {
   location                 = "East US"
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  depends_on = [ azurerm_resource_group.aks_rg ]
   tags = {
     environment = "staging"
   }
